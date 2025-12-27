@@ -1,0 +1,30 @@
+.bg-90{
+    background-color: blue;
+}
+
+.container-fluid{
+    background-color: blue;
+    width: 100%;
+}
+.bg-1{
+    height: 85px;
+     width: 110px;
+}
+  .bg-2{
+    width: 100%;
+  }
+.col-sm-6{
+    border: 2px solid black;
+    border-radius: 20px;
+  }
+h1{
+    text-align: center;
+    color: black;
+  }
+tr,th{
+    text-align: center;
+}
+.bg-3{
+    background-color: #333333;
+    color: black;
+}
