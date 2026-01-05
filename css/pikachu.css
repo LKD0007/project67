@@ -1,0 +1,57 @@
+.koko{
+    text-shadow: 2px 2px 5px black;
+    color: #D4AF37;
+}
+.koko-2{
+    color: #097969;
+}
+.koko-3{
+    color: #097969;
+}
+.con-1{
+    background-color: #F9FBF9;
+}
+.koko-5{
+    color: #097969;
+}
+.koko-4{
+     text-shadow: 2px 2px 5px black;
+    color: #2D4628;
+}
+.koko-6{
+    text-shadow: 2px 2px 5px black;
+    color: #2D4628;
+}
+.img-1 {
+    padding: 2px;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    /* 8s to draw + 2s pause = 10s total */
+    animation: realHeartPath 10s infinite ease-in-out; 
+    z-index: 10;
+}
+
+@keyframes realHeartPath {
+    0%   { transform: translate(0, 0); }               /* Bottom Tip */
+    25%  { transform: translate(-180px, -140px); }     /* Left Wide Curve */
+    40%  { transform: translate(-90px, -240px); }      /* Left Top Peak */
+    50%  { transform: translate(0, -180px); }          /* The Top Center DIP */
+    60%  { transform: translate(90px, -240px); }       /* Right Top Peak */
+    75%  { transform: translate(180px, -140px); }      /* Right Wide Curve */
+    100% { transform: translate(0, 0); }               /* Return to Bottom Tip */
+}
+
+.particle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    pointer-events: none;
+    z-index: 5;
+    border-radius: 50%;
+}
+.con-1{
+    margin-top: 152px;
+}

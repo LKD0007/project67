@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/pikachu.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+    /* Ensure content isn't hidden under the fixed navbar */
+    body { padding-top: 70px; } 
+    .bg-1 { width: 50px; }
+  </style>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const flowerLogo = document.querySelector('.img-1');
+    
+    function createHeartTrail() {
+        const rect = flowerLogo.getBoundingClientRect();
+        const p = document.createElement('div');
+        p.className = 'particle';
+        
+        // Use Gold and Rose Pink for the heart
+        const colors = ['#D4AF37', '#E91E63'];
+        p.style.background = colors[Math.floor(Math.random() * colors.length)];
+        
+        // Position at the center of your moving flower
+        p.style.left = (rect.left + rect.width / 2) + 'px';
+        p.style.top = (rect.top + rect.height / 2) + 'px';
+        
+        document.body.appendChild(p);
+    }
+
+    // Draw a dot every 20ms for a smooth line
+    let drawInterval = setInterval(createHeartTrail, 20);
+
+    // Clear all dots every 10 seconds to start the heart again
+    setInterval(() => {
+        const dots = document.querySelectorAll('.particle');
+        dots.forEach(dot => dot.remove());
+    }, 10000); 
+});
+</script>
+</head>
+<body id="About">
+    <nav class="navbar bg-dark navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="images/logokamka.jpg" alt="Logo" class="bg-1"></a>
+      <h3 class="text-white d-none d-lg-block">Making Every Occasion Beautiful & Memorable</h3>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="Homepage.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="About_us.html">About us</a></li>
+          <li class="nav-item"><a class="nav-link" href="service_page.html">Service</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gllary">Gallery</a></li>
+           <li class="nav-item"><a class="nav-link" href="#contact">Conatct us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+     <div class="container-fluid con-1">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="koko">
+          About Lakky Flower Works
+        </h1>
+      </div>
+      <div class="col-md-12 text-center">
+        <p class="koko-2">
+          Lakky Flower Works is a trusted name in flower and event decoration services. We specialize
+in creating stunning decorations for weddings, parties, corporate events, and religious
+functions.
+        </p>
+      </div>
+      <div class="col-md-12 text-center">
+        <p class="koko-3">
+          With years of experience and a skilled team, we understand the importance of your special
+day. Our goal is to deliver elegant, creative, and budget-friendly decoration solutions that
+bring your vision to life.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid con-2">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2 class="koko-6">
+          Our Mission
+        </h2>
+      </div>
+      <div class="col-md-12 koko-5">
+      <ul>
+        <li>
+           Exceeding Expectations: To provide high-quality decoration services that not only meet but exceed customer expectations through creativity and precision.
+        </li>
+        <li>
+            Floral Artistry: To transform every event into a breathtaking experience using the freshest flowers and innovative design concepts.
+        </li>
+        <li>
+            Customer-Centric Approach: To listen to our clients' unique visions and bring them to life with professional care and attention to detail.
+        </li>
+        <li>
+            Local Excellence: To be the premier choice for floral and event decor in Greater Noida, building lasting relationships within our community.
+        </li>
+        <li>
+            Memorable Moments: To ensure that every celebration, from intimate gatherings to grand weddings, is marked by beauty and elegance.
+        </li>
+      </ul> 
+      </div>
+      <div class="col-md-12">
+        <h2 class="koko-4 text-center">
+            Our vision
+        </h2>
+      </div>
+      <div class="col-md-12 koko-5">
+        <ul>
+            <li>
+              Inspirational Excellence: To inspire the local community in Greater Noida and beyond through artistry that speaks to the heart and elevates the human experience.
+            </li>
+            <li>
+              Regional Leadership: To become the most reliable and creative decoration service provider in the region, recognized for setting the gold standard in floral excellence.
+            </li>
+            <li>
+              Innovative Artistry: To continuously push the boundaries of design, blending traditional elegance with modern trends to create unique, immersive environments for every client.
+            </li>
+            <li>
+              Sustainable Growth: To lead the industry by adopting eco-friendly practices and sourcing the highest quality blooms, ensuring our beauty is as responsible as it is breathtaking.
+            </li>
+            <li>
+              A Legacy of Joy: To be the brand that families and businesses trust first to transform their most significant milestones into unforgettable, beautiful memories.
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+
+    <nav class="navbar navbar-expand-sm bg-light navbar-dark fixed-bottom justify-content-center">
+    <a class="navbar-brand" href="#"><img src="images/logokamka.jpg" alt="" class="img-1 img-fluid mx-auto d-block"></a>
+</nav>
+  </div>
+  </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    <br>
+      <br>
+        <br>
+</body>
+</html>
