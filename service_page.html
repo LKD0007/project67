@@ -1,51 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Page - Decorations</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link rel="stylesheet" href="css/koko.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
   <style>
-        body { padding-top: 70px; } 
-    .bg-1 { width: 50px; }
-  </style>
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const flowerLogo = document.querySelector('.img-1');
+    /* Fix for Fixed Navbar */
+    body { padding-top: 70px; padding-bottom: 70px; } 
     
-    function createHeartTrail() {
-        const rect = flowerLogo.getBoundingClientRect();
-        const p = document.createElement('div');
-        p.className = 'particle';
-        
-        // Use Gold and Rose Pink for the heart
-        const colors = ['#D4AF37', '#E91E63'];
-        p.style.background = colors[Math.floor(Math.random() * colors.length)];
-        
-        // Position at the center of your moving flower
-        p.style.left = (rect.left + rect.width / 2) + 'px';
-        p.style.top = (rect.top + rect.height / 2) + 'px';
-        
-        document.body.appendChild(p);
+    .bg-1 { width: 50px; }
+    
+    /* Ensure Carousel Images are uniform */
+    .carousel-item img {
+        height: 500px;
+        object-fit: cover;
     }
 
-    // Draw a dot every 20ms for a smooth line
-    let drawInterval = setInterval(createHeartTrail, 20);
+    /* CRITICAL FIX: Ensure buttons stay clickable above the bottom nav */
+    .carousel-control-prev, 
+    .carousel-control-next {
+        z-index: 1060 !important; 
+    }
 
-    // Clear all dots every 10 seconds to start the heart again
-    setInterval(() => {
-        const dots = document.querySelectorAll('.particle');
-        dots.forEach(dot => dot.remove());
-    }, 10000); 
-});
-</script>
+    /* Prevent heart particles from blocking mouse clicks */
+    .particle {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        pointer-events: none; 
+        z-index: 999;
+    }
+
+    /* Style for captions to make them readable */
+    .carousel-caption {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        padding: 20px;
+    }
   </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const flowerLogo = document.querySelector('.img-1');
+        
+        function createHeartTrail() {
+            if (!flowerLogo) return;
+            const rect = flowerLogo.getBoundingClientRect();
+            const p = document.createElement('div');
+            p.className = 'particle';
+            
+            const colors = ['#D4AF37', '#E91E63'];
+            p.style.background = colors[Math.floor(Math.random() * colors.length)];
+            p.style.left = (rect.left + rect.width / 2) + 'px';
+            p.style.top = (rect.top + rect.height / 2) + 'px';
+            
+            document.body.appendChild(p);
+        }
+
+        setInterval(createHeartTrail, 20);
+
+        setInterval(() => {
+            const dots = document.querySelectorAll('.particle');
+            dots.forEach(dot => dot.remove());
+        }, 10000); 
+    });
+  </script>
 </head>
-<body id="service_page.html">
-      <div class="container-fluid con-1">
-        <nav class="navbar bg-dark navbar-dark fixed-top">
+
+<body id="service_page">
+
+  <nav class="navbar bg-dark navbar-dark fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#"><img src="images/logokamka.jpg" alt="Logo" class="bg-1"></a>
       <h3 class="text-white d-none d-lg-block">Making Every Occasion Beautiful & Memorable</h3>
@@ -57,67 +87,66 @@ document.addEventListener('DOMContentLoaded', () => {
           <li class="nav-item"><a class="nav-link" href="Homepage.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="About_us.html">About us</a></li>
           <li class="nav-item"><a class="nav-link" href="service_page.html">Service</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gllary">Gallery</a></li>
-           <li class="nav-item"><a class="nav-link" href="#contact">Conatct us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact us</a></li>
         </ul>
       </div>
     </div>
   </nav>
-   <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
 
-    <nav class="navbar navbar-expand-sm bg-light navbar-dark fixed-bottom justify-content-center">
-    <a class="navbar-brand" href="#"><img src="images/logokamka.jpg" alt="" class="img-1 img-fluid mx-auto d-block"></a>
-</nav>
-  </div>
-  </div>
-    </div>
-    <div class="container-fluid con-2">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="demo" class="carousel slide" data-bs-ride="carousel">
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-    <div class="col-md-12">
-         <h1 class="text-center">
-         Wedding Decoration
-     </h1>
-    </div>
-    <div class="col-md-12 text-center">
-                Stage & Mandap Decoration
-    </div>
-    <div class="col-12 text-center">
-         Entry Gate Decoration
-    </div>
-    <div class="col-md-12 text-center">
-         Floral Theme Wedding Setup
-    </div>
-    <div class="col-md-12 text-center">
-         Reception Hall Decoration
-    </div>
-    </div>
-    <div class="carousel-item">
-      <img src="chicago.jpg" alt="Chicago" class="d-block" style="width:100%">
-    </div>
-    <div class="carousel-item">
-      <img src="ny.jpg" alt="New York" class="d-block" style="width:100%">
-    </div>
-  </div>
-  
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-
-            </div>
-        </div>
-    </div>
+  <div class="container-fluid mt-3">
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
       </div>
+      
+      <div class="carousel-inner">
+        
+        <div class="carousel-item active">
+          <img src="images/wedding decoration.jpg" alt="Wedding" class="d-block w-100">
+          <div class="carousel-caption">
+            <h1>Wedding Decoration</h1>
+            <p>Stage & Mandap Decoration | Entry Gate Decoration</p>
+            <p>Floral Theme Wedding Setup | Reception Hall Decoration</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="images/lambo.jpg" alt="Car" class="d-block w-100">
+          <div class="carousel-caption">
+            <h1>Car Decorations</h1>
+            <p>Wedding Car Decoration</p>
+            <p>Anniversary & Surprise Decoration</p>
+            <p>Artificial & Fresh Flower Car Decor</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="images/b'day.jpg" alt="New York" class="d-block w-100">
+          <div class="carousel-caption">
+            <h1>Special Events</h1>
+            <p>Custom setups for every location.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-sm bg-light navbar-dark fixed-bottom justify-content-center">
+    <a class="navbar-brand" href="#">
+        <img src="images/logokamka.jpg" alt="Flower Logo" class="img-1 img-fluid mx-auto d-block" style="width: 40px;">
+    </a>
+  </nav>
+
 </body>
 </html>
